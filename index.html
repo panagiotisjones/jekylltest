@@ -1,0 +1,16 @@
+---
+layout: default
+title: "Mytitle"
+fulltitle: "Myfulltitle"
+ord: 1
+---
+<main>
+  <h1>Hello World</h1>
+  <p>Thiss is the {{page.title}} title</p>
+  <ul>
+    {% assign sorted = site.pages | sort: "ord" %}
+    {% for node in sorted %}
+      <li><a href="{{node.url}}">{{node.title}}</a></li>
+    {% endfor %}
+  </ul>
+</main>
