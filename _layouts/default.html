@@ -13,11 +13,16 @@
     <p>Content
       Header
     </p>
-    <header>
-      {{content}}
-      <footer>
-        {% include footer.html %}
-      </footer>
+  </header>
+    {{content}}
+    <footer>
+      {% include footer.html %}
+    </footer>
+    {% raw %}
+    <?php
+    echo "hey";
+    ?>
+    {% endraw %}
 </body>
 
 </html>

@@ -13,11 +13,11 @@
     <p>Content
       Header
     </p>
-    <header>
-      <main>
+  </header>
+    <main>
   <h1>Hello World</h1>
-  <p>Thiss is the Mytitle title</p>
-  <ul>
+  <p onclick="turnBlue()">Thiss is the Mytitle title</p>
+  <ul id="list">
     
     
       <li><a href="/">Mytitle</a></li>
@@ -26,11 +26,31 @@
     
   </ul>
 </main>
+<script>
+var p=document.getElementsByTagName("li");
+document.getElementById("list").insertBefore(p[1],p[0]);
+var newp=document.createElement("p");
+var moreContent=document.createTextNode("yooo");
+newp.appendChild(moreContent);
+document.body.appendChild(newp);
+document.body.appendChild(document.createElement("button"));
+function turnBlue() {
+  document.getElementsByTagName("h1")[0].style.color="blue";
+};
+newp.onclick=turnBlue;
+document.getElementsByTagName("button")[0].onclick=turnBlue;
+</script>
 
-      <footer>
-        <p>this is <strong> the footer</strong> </p>
 
-      </footer>
+    <footer>
+      <p>this is <strong> the footer</strong> </p>
+
+    </footer>
+    
+    <?php
+    echo "hey";
+    ?>
+    
 </body>
 
 </html>

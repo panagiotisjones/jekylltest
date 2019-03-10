@@ -6,11 +6,12 @@ ord: 1
 ---
 <main>
   <h1>Hello World</h1>
-  <p>Thiss is the {{page.title}} title</p>
-  <ul>
+  <p onclick="turnBlue()">Thiss is the {{page.title}} title</p>
+  <ul id="list">
     {% assign sorted = site.pages | sort: "ord" %}
     {% for node in sorted %}
       <li><a href="{{node.url}}">{{node.title}}</a></li>
     {% endfor %}
   </ul>
 </main>
+{% include javascript.js %}
